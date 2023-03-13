@@ -2,6 +2,9 @@
 def addition(num1,num2) :
     return num1 + num2
 
+def radical(num) :
+    return num ** 0.5
+
 def subtraction(num1,num2) :
     return num1 - num2
 
@@ -34,14 +37,22 @@ def calculator(num1,num2) :
     # Exponent
     elif operator == "**" :
         print(num1,"to the power of",num2,"is",exponent(num1,num2))
-    # Exception handling (+,-,/,*,**)
+    # Radical
+    elif operator == "***" :
+        print("the radical of",num1,"is ",radical(num1))
+    # Exception handling (+,-,/,*,**,***)
     else :
         print("the operator isn't correct!")
 
 # Welcome title
-print("""Welcome to calculator.
-_______________________________
--------------------------------""")
+print("""Hello dude!
++   for addition
+-   for subtraction
+*   for multiplication
+/   for division
+**  for exponent
+*** for radical (if you wanna calculate the radical of a number,enter the number in first field and a random number in second field.)
+""")
 
 # Program loop
 while True :
@@ -49,7 +60,7 @@ while True :
     # Exception handling(int,float)
     try :
         num1 = float(input("Please enter first number :"))
-        num2 = float(input("Please enter second number :"))
+        num2 = float(input("Please enter second number :")) 
     except :
         print("Please enter an integer or float!")
     else :
