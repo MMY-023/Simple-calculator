@@ -15,8 +15,10 @@ def exponent(num1,num2) :
     return num1 ** num2
 
 # Operator recognize
-def calculator(num1,operator,num2) :
+def calculator(num1,num2) :
 
+    # Get the operator from user
+    operator = input("Please enter operator (+,-,*,/,**) :")
     # Addition
     if operator == "+" :
         print(num1,"plus",num2,"is ",addition(num1,num2))
@@ -36,34 +38,33 @@ def calculator(num1,operator,num2) :
     else :
         print("the operator isn't correct!")
 
-# Welcom title
+# Welcome title
 print("""Welcome to calculator.
 _______________________________
 -------------------------------""")
-# Exception handling(int,float)
-try :
-    num1 = float(input("Please enter first number :"))
-    num2 = float(input("Please enter second number :"))
-except :
-    print("Please enter an integer or float!")
-else :
-    # Program loop
-    while True :
 
-        # Get the information from user
-        operator = input("Please enter operator (+,-,*,/,**) :")
-        # calculate
-        calculator(num1,operator,num2)
-        # Get a order to continue
-        order = input("Do you wanna play again? Please enter y or n :")
-        # Exit the program
-        if order == 'n' :
-            print("Goodlock!")
-            break
-        # Play again
-        elif order == 'y' :
-            pass
-        # Exception handling(y,n)
-        else :
-            print("Something went wrong! you didn't enter y or n")
-            break
+# Program loop
+while True :
+
+    # Exception handling(int,float)
+    try :
+        num1 = float(input("Please enter first number :"))
+        num2 = float(input("Please enter second number :"))
+    except :
+        print("Please enter an integer or float!")
+    else :
+        # Calculate
+        calculator(num1,num2)
+    # Get a order to continue
+    order = input("Do you wanna play again? Please enter y or n :")
+    # Exit the program
+    if order == 'n' :
+        print("Goodluck!")
+        break
+    # Play again
+    elif order == 'y' :
+        pass
+    # Exception handling (y,n)
+    else :
+        print("Something went wrong! you didn't enter y or n")
+        break
